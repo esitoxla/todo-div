@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{
+    font-family: "cascadia code", sans-serif;
+    
+}
+
+.container{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.container > div{
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+    width: 100%;
+    background-color: #F1ECE6;
+    text-align: center;
+    padding: .5rem;
+    color: #737373;
+}
+
+.orange{
+    color: orange;
+}
+
+form > div{
+    width: 100%;
+    height: 100%;
+    /* border: 1px; */
+    border-radius: 5px;
+    margin-bottom: 3rem;
+}
+
+input{
+    padding: 1.3rem;
+    width: 40rem;
+    border: none;
+    border-radius: 20px;
+    background-color: #F1ECE6;
+    font-size: 1rem;
+}
+
+#btn{
+    padding: 1.3rem;
+    border: none;
+    border-radius: 20px;
+    background-color: #76B7CD;
+    color: white;
+    font-size: 1rem;
+}
+
+ul{
+    background-color: #F1ECE6;
+    width: 47.5rem;
+    border-radius: 20px;
+    font-size: 1rem;
+    list-style: none;
+    padding: 20px;
+}
+
+.clear{
+    padding: 1.3rem;
+    border: none;
+    border-radius: 20px;
+    background-color: #76B7CD;
+    color: white;
+    font-size: 1rem;
+    margin-top: 2rem;
+}
