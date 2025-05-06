@@ -1,33 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To do app</title>
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
+  <body>
     <main class="container">
+      <div class="logo">
+        <span>TO</span><span class="orange">DO</span>
+    </div>
+      <form action="" class="form">
         <div>
-            <span>TO</span><span class="orange">DO</span>
+          <input id="input" type="text" />
+          <button id="btn">Add Task</button>
         </div>
-        <form action="">
-            <div>
-                <input id="input" type="text">
-                <button id="btn">Add Task</button>
-            </div>
-        </form>
+      </form>
+      <div class="all-items">
         <ul id="list">
-
-        </ul>
-        <button class="clear">Clear completed</button>
+            <li class="list-item">
+              <div>
+                <input type="checkbox" id="checkbox" />
+                <span id="text">Personal information</span>
+              </div>
+              <div>
+                <button class = "delBtn"><i class="bi bi-trash"></i></button>
+              </div>
+            </li>
+          </ul>
+          <button class="clear">Clear completed</button>
+      </div>
     </main>
 
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>

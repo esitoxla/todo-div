@@ -16,10 +16,15 @@ body{
    align-items: center;
 }
 
+.logo {
+    width: 100%;
+    background-color: #F1ECE6;
+}
+
 .container > div{
     margin-bottom: 1.5rem;
     font-size: 2.5rem;
-    width: 100%;
+    /* width: 100%; */
     background-color: #F1ECE6;
     text-align: center;
     padding: .5rem;
@@ -38,9 +43,17 @@ form > div{
     margin-bottom: 3rem;
 }
 
+.all-items {
+    width: 60%;
+}
+
+.form {
+    width: 60%;
+}
+
 input{
     padding: 1.3rem;
-    width: 40rem;
+    /* width: 40rem; */
     border: none;
     border-radius: 20px;
     background-color: #F1ECE6;
@@ -58,7 +71,7 @@ input{
 
 ul{
     background-color: #F1ECE6;
-    width: 47.5rem;
+    /* width: 47.5rem; */
     border-radius: 20px;
     font-size: 1rem;
     list-style: none;
@@ -73,4 +86,14 @@ ul{
     color: white;
     font-size: 1rem;
     margin-top: 2rem;
+}
+
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#checkbox {
+    display: inline;
 }
