@@ -64,6 +64,7 @@ body{
     background-color: #76B7CD;
     color: white;
     font-size: 1rem;
+    cursor: pointer;
 }
 
 ul{
@@ -102,6 +103,7 @@ ul{
     height: 20px;
     border-radius: 50%; 
     border: 2px solid #555;
+    cursor: pointer;
 }
 
 #checkbox:checked {
@@ -114,4 +116,6 @@ ul{
     font-size: 20px;
     color: orange;
     background-color: #F1ECE6;
+    cursor: pointer;
 }
+
