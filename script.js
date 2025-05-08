@@ -1,39 +1,76 @@
 const btn = document.querySelector("#btn");
 const list = document.querySelector("#list");
-// const textNode = document.createTextNode(input)
+const input = document.querySelector("#input");
 
-btn.addEventListener("click", (e) => {
-  e.preventDefault();
-  const input = document.querySelector("#input").value;
+// Get all tasks from local storage and display them
+function loadTasks() {
+  const tasks = JSON.parse(localStorage.getItem("list-item")) || [];
+
+  list.innerHTML = "";
+
+  tasks.forEach((task, index) => addToDOM(task, index));
+}
+
+// Save a task to local storage
+function addTask() {
+  const task = input.value.trim();
+  if (!task) return;
+
+  const allTasks = JSON.parse(localStorage.getItem("list-item")) || [];
+  allTasks.push(task);
+
+  localStorage.setItem("list-item", JSON.stringify(allTasks));
+
+  input.value = "";
+  input.focus();
+
+  loadTasks(); // refresh UI
+}
+
+// Add a single task to the UI
+function addToDOM(taskText, index) {
   const task = document.createElement("li");
   task.classList.add("list-item");
+
   task.innerHTML = `
     <div>
-        <input type="checkbox" id="checkbox" />
-        <span id="text">${input}</span>
+      <input type="checkbox" class="checkbox" id="checkbox-${index}" />
+      <span id="text-${index}">${taskText}</span>
     </div>
     <div>
-        <button class = "delBtn"><i class="bi bi-trash"></i></button>
+      <button class="delBtn" data-index="${index}"><i class="bi bi-trash"></i></button>
     </div>
-    `;
+  `;
 
-  // append/add task
   list.appendChild(task);
-
-  // Clear input
-  document.querySelector("#input").value = "";
 
   // Delete task
   const delBtn = task.querySelector(".delBtn");
   delBtn.addEventListener("click", () => {
-    task.remove();
+    deleteTask(index);
   });
 
-  const text = task.querySelector("#text");
-  const checkbox = task.querySelector("#checkbox");
+  const checkbox = task.querySelector(`#checkbox-${index}`);
+  const textSpan = task.querySelector(`#text-${index}`);
 
-  // Click checkbox to put a linethrough
   checkbox.addEventListener("change", () => {
-    text.style.textDecoration = checkbox.checked ? "line-through" : "none";
+    textSpan.style.textDecoration = checkbox.checked ? "line-through" : "none";
   });
+}
+
+// Delete a task from local storage and refresh UI
+function deleteTask(index) {
+  const tasks = JSON.parse(localStorage.getItem("list-item")) || [];
+  tasks.splice(index, 1); // remove one task at the given index
+  localStorage.setItem("list-item", JSON.stringify(tasks));
+  loadTasks();
+}
+
+// On button click
+btn.addEventListener("click", (e) => {
+  e.preventDefault();
+  addTask();
 });
+
+// Load tasks from localStorage when page loads
+window.addEventListener("DOMContentLoaded", loadTasks);
