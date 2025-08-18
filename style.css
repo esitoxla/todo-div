@@ -119,3 +119,31 @@ ul{
     cursor: pointer;
 }
 
+
+/* Small screens (phones, <640px) */
+@media (max-width: 640px) {
+  .all-items {
+    width: 90%;
+  }
+}
+
+/* Medium screens (tablets, 641px - 1024px) */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .all-items {
+    width: 75%;
+  }
+}
+
+/* Large screens (laptops, 1025px - 1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .all-items {
+    width: 60%;
+  }
+}
+
+/* Extra large screens (1441px and above, big monitors) */
+@media (min-width: 1441px) {
+  .all-items {
+    width: 50%;
+  }
+}
